@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="100 days of UI">
+    <meta name="author" content="Evan | @evan153 on Github">
+
+    <title>LAURA - Login</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main CSS Theme -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <!-- jQuery -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  
+html {
+    min-height: 100%;
+}
+
+body {
+    background: rgb(196, 94, 95);
+    background: -webkit-linear-gradient(top, rgba(196, 94, 95, 1) 0%, rgba(122, 34, 85, 1) 90%);
+    background: linear-gradient(to bottom, rgba(196, 94, 95, 1) 0%, rgba(122, 34, 85, 1) 90%);
+    background-repeat: no-repeat;
+    font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    min-height: 100%;
+}
+
+.logo {
+    display: block;
+    height: 64px;
+    position: absolute;
+    left: 7%;
+    top: 5%;
+}
+
+.login-wrapper {
+    background-color: rgba(20, 20, 20, 0.7);
+    border-radius: 0%;
+    padding: 35px;
+    color: white;
+    height: 250px;
+    margin: 0 auto;
+    opacity: 80%;
+    width: 90%;
+}
+    
+a, a:hover, a:active, a:visited {
+  color: inherit;
+  font-size: 1.35em;
+  padding: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-wrapper ul li a,
+.login-wrapper ul li a:hover,
+.login-wrapper ul li a:active,
+.login-wrapper ul li a:focus {
+    background: none;
+    border: none;
+    border-radius: 3%;
+    color: white;
+    margin: 10px 10px;
+    outline: none;
+}
+
+.login-wrapper ul li.active a {
+    background: rgba(200, 200, 200, 0.2) !important;
+    border: none;
+    border-bottom: 3px solid rgba(230, 230, 230, 1);
+    color: #fff;
+}
+
+.input-login {
+    background: rgba(60, 30, 50, 0.5);
+    border: 2px solid rgba(230, 230, 230, 0.8);
+    border-radius: 10px;
+    margin: 10px auto;
+    padding: 5px 10px;
+    width: 80%;
+}
+
+input:focus {
+    /* outline: 2px solid rgba(240, 240, 240, 0.2);*/
+    border-color: rgba(255, 255, 255, 0.85);
+    outline: none;
+}
+
+.btn-login,
+.btn-create {
+    background: rgba(255, 69, 0, 0.8);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 32px;
+    margin: 10px auto;
+    outline: none;
+    padding: 5px;
+    width: 80%;
+}
+
+.alert {
+  background: rgba(0,0,0,0.35) !important;
+  border-color: rgba(35,35,35,0.67) !important;
+}
+    
+.err {
+  position: absolute !important;
+  right: 0px;
+  visibility: hidden;
+  top: 0px;
+  margin: 10px;
+  color: #fff;
+}
+
+.alert-success {
+  background: rgba(0,0,0,0.35) !important;
+  border-color: rgba(35,35,35,0.67) !important;
+}
+
+.close {
+  color: rgba(255,255,255,0.4);
+  opacity: inherit;
+}
+
+.err a {
+  padding: 0px 5px;
+}
+  </style>
+
+</head>
+
+<body>
+    <script>
+      $(document).ready(function() {
+        $('#msg').html(`Logged in as <b><%=data.username %></b><br>Have fun! :D`);
+        $('.err').css('visibility', 'visible');
+        setTimeout(function() {
+          $('.err').css('visibility', 'hidden');
+
+        }, 3000);
+      });
+    </script>
+    <div class="alert alert-warning err" id="error">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong style="font-size: 1.1em;">[LAURA]  </strong> <span id="msg"> Indicates a warning that might need attention.</span>
+    </div>
+    <a href="http://127.0.0.1:3535/"><% include logo.ejs %></a>
+    <div class="login-wrapper text-center">
+      <h1>Welcome <b><%= data.username %></b></h1>
+      <p>This login system has been created by <a href="https://github.com/knox97">knox97</a><br>
+      and designed by <a href="https://evan153.github.io/100-Days-of-UI/">evan153</a></p>
+        
+    </div>
+
+    
+</body>
+
+</html>

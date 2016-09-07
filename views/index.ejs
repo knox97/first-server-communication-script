@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="100 days of UI">
+    <meta name="author" content="Evan | @evan153 on Github">
+
+    <title>LAURA - Login</title>
+
+    <!-- Normalize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Main CSS Theme -->
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet" type="text/css">
+    <!-- jQuery -->
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Main.js -->
+    <script src="assets/scripts/main.js"></script>
+</head>
+
+<body>
+    <div class="alert alert-success err" id="error">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>[LAURA] </strong><span id="msg"> Indicates a warning that might need attention.</span>
+    </div>
+    <% include logo.ejs %>
+    <div class="login-wrapper text-center">
+        <ul class="nav nav-pills">
+            <li class="active"><a data-toggle="tab" href="#signIn">Sign In</a></li>
+            <li><a data-toggle="tab" href="#createAcc">Create Account</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="signIn" class="tab-pane fade in active">
+              <form method="POST" action="/log">
+                <input type="text" class="input-login userL" placeholder="Username" name="username">
+                <input type="password" class="input-login passL" placeholder="Password" name="password"><br>
+                <!--<button class="btn-login"  type="submit">Login</button>-->
+                <input class="btn-login" type="submit" value="Login" />
+              </form>
+            </div>
+            <div id="createAcc" class="tab-pane fade">
+              <form method="POST" action="/reg">
+                <input type="text" class="input-login userR" placeholder="Username" name="username">
+                <input type="password" class="input-login passR" placeholder="Password" name="password"><br>
+                <input class="btn-login" type="submit" value="Create Account" />
+              </form>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+
+</html>
